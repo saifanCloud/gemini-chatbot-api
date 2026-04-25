@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloud - Asisten Virtual Bank</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="chat-container">
+    <!-- Header -->
+    <header class="chat-header">
+      <div class="header-content">
+        <div class="bot-avatar" aria-label="Cloud Logo">
+          <!-- Cloud Icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+          </svg>
+        </div>
+        <div class="header-info">
+          <h1>Cloud</h1>
+          <span class="bot-subtitle">Asisten Virtual Bank</span>
+        </div>
+      </div>
+      <span class="status-badge">
+        <span class="status-dot"></span> Online
+      </span>
+    </header>
+
+    <!-- Chat Messages -->
+    <div class="chat-messages" id="chatMessages">
+      <div class="welcome-message">
+        <div class="welcome-icon">☁️</div>
+        <h2>Selamat Datang di Cloud!</h2>
+        <p>Saya asisten virtual siap membantu kebutuhan perbankan Anda.</p>
+        <div class="quick-actions">
+          <button class="quick-action-btn" data-message="Cara cek saldo rekening">
+            <span>💳</span> Cek Saldo
+          </button>
+          <button class="quick-action-btn" data-message="Cara transfer uang">
+            <span>💸</span> Transfer
+          </button>
+          <button class="quick-action-btn" data-message="Produk tabungan">
+            <span>🏦</span> Tabungan
+          </button>
+          <button class="quick-action-btn" data-message="Cara bayar tagihan">
+            <span>📄</span> Bayar Tagihan
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Typing Indicator -->
+    <div class="typing-indicator" id="typingIndicator" style="display:none" aria-live="polite">
+      <div class="typing-dot"></div>
+      <div class="typing-dot"></div>
+      <div class="typing-dot"></div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="chat-input-container">
+      <div class="input-wrapper">
+        <textarea 
+          id="messageInput" 
+          placeholder="Tanya tentang perbankan..." 
+          rows="1"
+          maxlength="2000"
+          aria-label="Ketik pesan Anda"
+        ></textarea>
+        <button id="sendButton" class="send-button" aria-label="Kirim pesan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+      <div class="input-hint">
+        <span>Enter untuk kirim • Shift+Enter untuk baris baru</span>
+        <span class="char-count" id="charCount">0/2000</span>
+      </div>
+    </div>
+
+    <!-- Security Disclaimer -->
+    <div class="disclaimer" role="note">
+      <p><strong>⚠️ Keamanan:</strong> Jangan pernah membagikan PIN, OTP, atau password.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
